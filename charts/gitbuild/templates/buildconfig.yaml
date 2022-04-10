@@ -2,7 +2,7 @@ appVersion: build.openshift.io/v1
 kind: BuildConfig
 
 metadata:
-  name: {{ include "gitbuild.fullname" }}
+  name: {{- include "gitbuild.fullname" }}
   labels:
     {{- include "gitbuild.labels" }}
 
