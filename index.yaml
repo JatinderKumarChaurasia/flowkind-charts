@@ -1,0 +1,25 @@
+apiVersion: v1
+entries:
+  imagebuild:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-10T13:15:12.919568+05:30"
+    description: A Helm chart for Kubernetes
+    digest: 1f4f4220610a8b33df0596d5a0585e272d66cbf06e0597402db52ae05f51431c
+    name: imagebuild
+    type: application
+    urls:
+    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/imagebuild-0.1.0.tgz
+    version: 0.1.0
+  springboot:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-04-10T13:15:12.919943+05:30"
+    description: A Helm chart for Kubernetes
+    digest: debbcc6f2eade7786dcfe02d237119f4ca7f2e26f09ca304e8bf75b6e141ace1
+    name: springboot
+    type: application
+    urls:
+    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/springboot-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-04-10T13:15:12.919026+05:30"
