@@ -3,34 +3,34 @@ entries:
   gitbuild:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-04-10T15:20:31.010808+05:30"
+    created: "2022-04-10T15:57:43.750495+05:30"
     description: A Helm chart for Kubernetes
-    digest: 156f3a9574d051ecf47942f8826591beb905ef55b13bc784f091494de2c06c9d
+    digest: 8a26b326169475ef8f35bb9dd4ff6c5f6e14cb48d21d7c9ef29050b59ee71067
     name: gitbuild
     type: application
     urls:
-    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/gitbuild-0.5.0.tgz
-    version: 0.5.0
+    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/gitbuild-0.6.0.tgz
+    version: 0.6.0
   imagebuild:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-04-10T15:20:31.011257+05:30"
+    created: "2022-04-10T15:57:43.75093+05:30"
     description: A Helm chart for Kubernetes
-    digest: 8dae09204fc1fff2ff4ef7865254e5fe82b1b630caa41d58b59ac7bfbfa7ba2a
+    digest: 878746d9b589f66c699a4414fdd24d1fbcdb3d2327154f179dd193dc0bca0401
     name: imagebuild
     type: application
     urls:
-    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/imagebuild-0.5.0.tgz
-    version: 0.5.0
+    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/imagebuild-0.6.0.tgz
+    version: 0.6.0
   springboot:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-04-10T15:20:31.011613+05:30"
+    created: "2022-04-10T15:57:43.751291+05:30"
     description: A Helm chart for Kubernetes
-    digest: 441f38ec212da00240525b5a9045775ab4f30136a0becf3417293385ae597b65
+    digest: b7d2e752b3a34ff8e198de6d476254d83328bbccccd622eef80371aaa3b42565
     name: springboot
     type: application
     urls:
-    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/springboot-0.5.0.tgz
-    version: 0.5.0
-generated: "2022-04-10T15:20:31.010366+05:30"
+    - https://jatinderkumarchaurasia.github.io/flowkind-charts/pkgs/springboot-0.6.0.tgz
+    version: 0.6.0
+generated: "2022-04-10T15:57:43.750068+05:30"
