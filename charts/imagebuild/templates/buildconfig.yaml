@@ -1,0 +1,44 @@
+appVersion: build.openshift.io/v1
+kind: BuildConfig
+
+metadata:
+  name: {{ include "imagebuild.fullname" }}
+  labels:
+    {{- include "imagebuild.labels" }}
+
+spec:
+  completionDeadlineSeconds: {{ .Values.completionDeadlineSeconds}}
+  failedBuildsHistoryLimit: {{ .Values.failedBuildsHistoryLimit}}
+  successfulBuildsHistoryLimit: 2
+  {{- if .Values.runPolicy }}
+  runPolicy: {{ .Values.runPolicy | default "serial" }}
+  {{- end -}}
+  source:
+    {{ if eq .Values.inputType "git" }}
+    type: Git
+    git:
+      ref: {{ .Values.ref }}
+      uri: {{ .Values.uri }}
+    contextDir: {{ .Values.contextDir }}
+    {{ if .Values.sourceSecret }}
+    sourceSecret: {{ .Values.sourceSecret }}
+    {{- end -}}
+    {{- else if eq .Values.inputType "docker" -}}
+    type: Docker
+    dockerfile:
+    {{- end -}}
+  output:
+    imageLabels:
+         {{- include "springboot.selectorLabels" . | nindent 4 }}
+      name: app_version
+      value: {{ required "tag" .Values.build.image.tag }}
+       {{- if .Values.imagePushSecrets -}}
+       {{- end -}}
+      to:
+        kind: DockerImage
+        name:
+        {{ required "build.image.registry" .Values.build.image.registry }}/{{ required "build.image.name" .Values.build.image.name }}:{{ required "build.image.tag required" .Values.build.image.tag }}
+       {{- if and (eq build.output.kind "DockerImage") .Values.imagePushSecrets -}}
+      pushSecret: {{ .Values.imagePushSecrets }}
+       {{- end -}}
+

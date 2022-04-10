@@ -1,0 +1,31 @@
+appVersion: build.openshift.io/v1
+kind: BuildConfig
+
+metadata:
+  name: {{ include "gitbuild.fullname" }}
+  labels:
+    {{- include "gitbuild.labels" }}
+
+spec:
+  source:
+    type: Git
+    git:
+      ref: {{ .Values.ref }}
+      uri: {{ .Values.uri }}
+    contextDir: {{ .Values.contextDir }}
+    dockerfile: {{ .Values.dockerfile }}
+  output:
+    imageLabels:
+         {{- include "gitbuild.selectorLabels" . | nindent 4 }}
+      name: {{ .Values.fullnameOverride }}
+      value: {{ required "tag" .Values.build.image.tag }}
+       {{- if .Values.pushSecret -}}
+         pushSecrets: {{ .Values.pushSecret }}
+       {{- end -}}
+      to:
+        kind: DockerImage
+        name:
+        {{ required "build.image.registry" .Values.build.image.registry }}/{{ required "build.image.name" .Values.build.image.name }}:{{ required "build.image.tag required" .Values.build.image.tag }}
+{{/*       {{- if and (eq build.output.kind "DockerImage") .Values.imagePushSecrets -}}*/}}
+        pushSecret: {{ .Values.pushSecret }}
+{{/*       {{- end -}}*/}}
