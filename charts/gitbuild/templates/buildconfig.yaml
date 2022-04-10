@@ -4,7 +4,7 @@ kind: BuildConfig
 metadata:
   name: {{ include "gitbuild.fullname" . }}
   labels:
-    {{ include "gitbuild.labels" }}
+    {{- include "gitbuild.labels" . | nindent 4 }}
 
 spec:
   source:
